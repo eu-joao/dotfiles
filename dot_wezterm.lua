@@ -48,7 +48,7 @@ return {
 	font_size = 14,
 
 	-- Aparência
-  color_scheme = 'Everforest Dark (Gogh)',
+  color_scheme = 'Gruvbox dark, medium (base16)',
 	window_background_opacity = 0.9,
 	window_padding = { left = 10, right = 10, top = 10, bottom = 10 },
 
