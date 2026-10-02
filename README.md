@@ -1,0 +1,3 @@
+# dotfiles
+
+![fastfetch](./fastfetch.png)
