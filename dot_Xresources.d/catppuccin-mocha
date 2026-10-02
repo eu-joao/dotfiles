@@ -1,0 +1,35 @@
+! Tema: Catppuccin Mocha
+
+! ===== Cores principais =====
+#define C_FG       #cdd6f4
+#define C_BG       #1e1e2e
+#define C_CURSOR   #f5e0dc
+#define C_POINTER  #f5e0dc
+#define C_HL_BG    #585b70
+#define C_HL_FG    #cdd6f4
+
+! ===== Cores normais (color0-7) =====
+#define C_00       #45475a
+#define C_01       #f38ba8
+#define C_02       #a6e3a1
+#define C_03       #f9e2af
+#define C_04       #89b4fa
+#define C_05       #f5c2e7
+#define C_06       #94e2d5
+#define C_07       #bac2de
+
+! ===== Cores brilhantes (color8-15) =====
+#define C_08       #585b70
+#define C_09       #f38ba8
+#define C_10       #a6e3a1
+#define C_11       #f9e2af
+#define C_12       #89b4fa
+#define C_13       #f5c2e7
+#define C_14       #94e2d5
+#define C_15       #cdd6f4
+
+! ===== Cores diversas =====
+#define C_BOLD     #f5e0dc
+#define C_UL       #94e2d5
+#define C_IT       #cba6f7
+#define C_BL       #f38ba8

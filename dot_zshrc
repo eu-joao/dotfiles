@@ -1,72 +1,94 @@
-# ── Oh My Zsh ────────────────────────────────────────────────────────────────
+# ┌────────────────────────────────────────────────────────────────────────────┐
+# │ ~/.zshrc                                                                   │
+# └────────────────────────────────────────────────────────────────────────────┘
+
+# ┌────────────────────────────────────────────────────────────────────────────┐
+# │ Oh My Zsh                                                                  │
+# └────────────────────────────────────────────────────────────────────────────┘
 export ZSH="$HOME/.oh-my-zsh"
 
 plugins=(
-  # alias-finder
-  # chezmoi
-  # colored-man-pages
-  # colorize
-  # command-not-found
-  # gh
-  zsh-autosuggestions
-  zsh-syntax-highlighting
+  alias-finder               # avisa quando você digita um comando que já tem alias
+  chezmoi                    # completions + aliases do chezmoi (só útil se você usa chezmoi)
+  colored-man-pages          # deixa as páginas do `man` coloridas
+  command-not-found          # sugere qual pacote instalar quando o comando não existe
+  gh                         # autocompletar do GitHub CLI (`gh`)
+  zsh-autosuggestions        # sugere comandos do histórico em cinza (→ aceita)
+  zsh-syntax-highlighting    # colore o comando enquanto digita; deve ser o ÚLTIMO da lista
 )
 
 source $ZSH/oh-my-zsh.sh
 
-# ── Ambiente ─────────────────────────────────────────────────────────────────
+# ┌────────────────────────────────────────────────────────────────────────────┐
+# │ Ambiente                                                                   │
+# └────────────────────────────────────────────────────────────────────────────┘
 export LANG=pt_BR.UTF-8
 export LC_ALL=pt_BR.UTF-8
 export EDITOR=nvim
 
-# ── Histórico ────────────────────────────────────────────────────────────────
-HISTSIZE=10000
-SAVEHIST=10000
-setopt HIST_IGNORE_DUPS      # não salva duplicatas consecutivas
-setopt HIST_IGNORE_SPACE     # não salva comandos que começam com espaço
-setopt SHARE_HISTORY         # compartilha histórico entre sessões abertas
+# ┌────────────────────────────────────────────────────────────────────────────┐
+# │ Histórico                                                                  │
+# └────────────────────────────────────────────────────────────────────────────┘
+HISTSIZE=10000                # linhas mantidas em memória
+SAVEHIST=10000                # linhas salvas no arquivo
 
-# ── Aliases ──────────────────────────────────────────────────────────────────
+setopt HIST_IGNORE_DUPS       # não salva duplicatas consecutivas
+setopt HIST_IGNORE_SPACE      # não salva comandos que começam com espaço
+setopt SHARE_HISTORY          # compartilha histórico entre sessões abertas
 
-# Navegação
+# ┌────────────────────────────────────────────────────────────────────────────┐
+# │ Aliases                                                                    │
+# └────────────────────────────────────────────────────────────────────────────┘
+# ── Navegação ─────────────────────────────────────────────────────────────────
 alias ~="cd ~"
 alias ..="cd .."
-alias .="pwd"
 
-# Listagem (eza é o fork mantido do exa)
+# ── Listagem (eza é o fork mantido do exa) ────────────────────────────────────
 alias l="eza --classify --color=always --all --sort=type --icons"
 alias ls="eza --classify --color=always --all --sort=type --icons"
 alias lt="eza --classify --color=always --all --sort=type --tree --level=2 --icons"
 alias lg="eza --classify --color=always --all --sort=type --long --header --links --no-user --icons"
 
-# Editor
+# ── Editor ────────────────────────────────────────────────────────────────────
 alias vi=nvim
 alias vim=nvim
 alias i=nvim
 
-# Ferramentas
-alias cat=batcat
+# ── Ferramentas ───────────────────────────────────────────────────────────────
+alias cat=bat
 alias dl=yt-dlp
-alias dpkg="sudo dpkg -i"
 
-# Git
+# ── Git ───────────────────────────────────────────────────────────────────────
 alias gs="git status"
 alias gc="git commit"
 alias gl="git log"
 
-# ── NVM ──────────────────────────────────────────────────────────────────────
+# ┌────────────────────────────────────────────────────────────────────────────┐
+# │ NVM (gerenciador de versões do Node)                                       │
+# └────────────────────────────────────────────────────────────────────────────┘
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                    # carrega o nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # autocompletar
 
-# ── PATH ─────────────────────────────────────────────────────────────────────
+# ┌────────────────────────────────────────────────────────────────────────────┐
+# │ PATH                                                                       │
+# └────────────────────────────────────────────────────────────────────────────┘
 export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 export PATH="$HOME/gk:$PATH"
 
-# ── fzf ──────────────────────────────────────────────────────────────────────
-# Integração com o shell (Ctrl+R para histórico, Ctrl+T para arquivos)
-# Instalar: https://github.com/junegunn/fzf#installation
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# ┌────────────────────────────────────────────────────────────────────────────┐
+# │ Homebrew                                                                   │
+# └────────────────────────────────────────────────────────────────────────────┘
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv zsh)"
 
-# ── Starship ─────────────────────────────────────────────────────────────────
+# ┌────────────────────────────────────────────────────────────────────────────┐
+# │ Starship (prompt)                                                          │
+# └────────────────────────────────────────────────────────────────────────────┘
 eval "$(starship init zsh)"
+
+# ┌────────────────────────────────────────────────────────────────────────────┐
+# │ fzf (busca fuzzy)                                                          │
+# └────────────────────────────────────────────────────────────────────────────┘
+# Ctrl+R → histórico | Ctrl+T → arquivos
+# Instalação: https://github.com/junegunn/fzf#installation
+source <(fzf --zsh)

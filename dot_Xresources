@@ -1,0 +1,50 @@
+! aplicar configuraão: xrdb -merge ~/.Xresources
+
+#include "/home/abacate/.Xresources.d/gruvbox"
+#include "/home/abacate/.Xresources.d/template"
+
+! ── Janela ──
+UXTerm*maximized: true
+UXTerm*internalBorder: 10
+UXTerm*saveLines: 10000
+
+! ── Fonte ──
+! Monaspace Argon NF
+! Monaspace Neon NF
+! Monaspace Krypton NF
+! Monaspace Xenon NF
+! JetBrainsMono Nerd Font
+! FiraCode Nerd Font
+UXTerm*renderFont: true
+UXTerm*faceName: Monaspace Xenon NF
+UXTerm*faceSize: 14
+
+! ── Cursor: underline piscando ──
+UXTerm*cursorUnderLine: true
+UXTerm*cursorBlink: true
+UXTerm*cursorOnTime: 500
+UXTerm*cursorOffTime: 500
+
+! ── Clipboard (seleção também vai para o CLIPBOARD) ──
+UXTerm*selectToClipboard: true
+
+! ── Truecolor e imagens (sixel) ──
+UXTerm*directColor: true
+UXTerm*decTerminalID: vt340
+UXTerm*numColorRegisters: 256
+UXTerm*sixelScrolling: true
+
+! ── Trocar tema sem reiniciar o terminal ──
+UXTerm*dynamicColors: true
+
+! ── Interação com fastfetch  ──
+UXTerm*allowWindowOps: true
+
+! ── Atalhos (iguais aos do wezterm) ──
+UXTerm*VT100.translations: #override \n\
+    Ctrl Shift <Key>J: scroll-forw(1,line) \n\
+    Ctrl Shift <Key>K: scroll-back(1,line) \n\
+    Ctrl Shift <Key>D: scroll-forw(1,halfpage) \n\
+    Ctrl Shift <Key>U: scroll-back(1,halfpage) \n\
+    Ctrl Shift <Key>C: copy-selection(CLIPBOARD) \n\
+    Ctrl Shift <Key>V: insert-selection(CLIPBOARD)
