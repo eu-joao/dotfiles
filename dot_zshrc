@@ -57,6 +57,7 @@ alias i=nvim
 # ── Ferramentas ───────────────────────────────────────────────────────────────
 alias cat=bat
 alias dl=yt-dlp
+alias neofetch=fastfetch
 
 # ── Git ───────────────────────────────────────────────────────────────────────
 alias gs="git status"
@@ -64,17 +65,9 @@ alias gc="git commit"
 alias gl="git log"
 
 # ┌────────────────────────────────────────────────────────────────────────────┐
-# │ NVM (gerenciador de versões do Node)                                       │
-# └────────────────────────────────────────────────────────────────────────────┘
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                    # carrega o nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # autocompletar
-
-# ┌────────────────────────────────────────────────────────────────────────────┐
 # │ PATH                                                                       │
 # └────────────────────────────────────────────────────────────────────────────┘
-export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
-export PATH="$HOME/gk:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 # ┌────────────────────────────────────────────────────────────────────────────┐
 # │ Homebrew                                                                   │
@@ -82,9 +75,11 @@ export PATH="$HOME/gk:$PATH"
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv zsh)"
 
 # ┌────────────────────────────────────────────────────────────────────────────┐
-# │ Starship (prompt)                                                          │
+# │ Pure (prompt)                                                              │
 # └────────────────────────────────────────────────────────────────────────────┘
-eval "$(starship init zsh)"
+fpath+=("$(brew --prefix)/share/zsh/site-functions") # se instalar pelo homebrew, adiciona o path do pure
+autoload -U promptinit; promptinit
+prompt pure
 
 # ┌────────────────────────────────────────────────────────────────────────────┐
 # │ fzf (busca fuzzy)                                                          │

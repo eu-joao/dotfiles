@@ -1,6 +1,6 @@
 ! aplicar configuraão: xrdb -merge ~/.Xresources
 
-#include "/home/abacate/.Xresources.d/gruvbox"
+#include "/home/abacate/.Xresources.d/catppuccin-mocha"
 #include "/home/abacate/.Xresources.d/template"
 
 ! ── Janela ──
@@ -9,15 +9,16 @@ UXTerm*internalBorder: 10
 UXTerm*saveLines: 10000
 
 ! ── Fonte ──
-! Monaspace Argon NF
-! Monaspace Neon NF
-! Monaspace Krypton NF
-! Monaspace Xenon NF
-! JetBrainsMono Nerd Font
-! FiraCode Nerd Font
+! Monaspace Neon = MonaspiceNe Nerd Font Mono
+! Monaspace Argon = MonaspiceAr Nerd Font Mono
+! Monaspace Xenon = MonaspiceXe Nerd Font Mono
+! Monaspace Radon = MonaspiceRn Nerd Font Mono
+! Monaspace Krypton NF = MonaspiceKr Nerd Font Mono
+! JetBrainsMono Nerd Font Mono
+! FiraCode Nerd Font Mono
 UXTerm*renderFont: true
-UXTerm*faceName: Monaspace Xenon NF
-UXTerm*faceSize: 14
+UXTerm*faceName: FiraCode Nerd Font Mono
+UXTerm*faceSize: 16
 
 ! ── Cursor: underline piscando ──
 UXTerm*cursorUnderLine: true
