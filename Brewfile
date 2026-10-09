@@ -1,17 +1,43 @@
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
+# Console Bonsai is a bonsai tree generator, written in C using ncurses
+brew "cbonsai"
+# Manage your dotfiles across multiple diverse machines, securely
+brew "chezmoi"
+# Console Matrix
+brew "cmatrix"
 # Modern, maintained replacement for ls
 brew "eza"
+# Like neofetch, but much faster because written mostly in C
+brew "fastfetch"
+# Simple, fast and user-friendly alternative to find
+brew "fd"
+# X11 image viewer
+brew "feh"
 # Command-line fuzzy finder written in Go
 brew "fzf"
+# Distributed revision control system
+brew "git"
+# Simple terminal UI for git commands
+brew "lazygit"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
 # Open-source, cross-platform JavaScript runtime environment
 brew "node"
-# Cross-shell prompt for astronauts
-brew "starship"
+# Pretty, minimal and fast ZSH prompt
+brew "pure"
+# Search tool like grep and The Silver Searcher
+brew "ripgrep"
+# Terminal multiplexer
+brew "tmux"
+# Parser generator tool
+brew "tree-sitter-cli"
+# Blazing fast terminal file manager written in Rust, based on async I/O
+brew "yazi"
+cask "font-fira-code-nerd-font"
+cask "font-jetbrains-mono-nerd-font"
+cask "font-monaspice-nerd-font"
 vscode "esbenp.prettier-vscode"
-uv "mistral-vibe"
 flatpak "com.bitwarden.desktop"
-flatpak "com.github.wwmm.easyeffects"
 flatpak "it.mijorus.gearlever"
+flatpak "org.gnome.World.PikaBackup"
