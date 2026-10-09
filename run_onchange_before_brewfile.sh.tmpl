@@ -8,4 +8,11 @@ fi
 
 # Atualiza o Brewfile com qualquer novo pacote instalado
 BREWFILE="{{ .chezmoi.sourceDir }}/Brewfile"
-brew bundle dump --file="$BREWFILE" --overwrite # --describe
+
+# Remover o arquivo antigo antes de recriar
+rm -f "$BREWFILE"
+
+# Recriar sem --overwrite
+# suporte no linux a overwrite e describe não funciona
+brew bundle dump --file="$BREWFILE" # --overwrite --describe
+
