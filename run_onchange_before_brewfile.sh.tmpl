@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Instala tudo baseado no Brewfile
+if [ -f "{{ .chezmoi.sourceDir }}/Brewfile" ]; then
+  cd "{{ .chezmoi.sourceDir }}"
+  brew bundle install
+fi
+
+# Atualiza o Brewfile com qualquer novo pacote instalado
+BREWFILE="{{ .chezmoi.sourceDir }}/Brewfile"
+brew bundle dump --file="$BREWFILE" --overwrite # --describe
