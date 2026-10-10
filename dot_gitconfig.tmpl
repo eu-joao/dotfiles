@@ -1,0 +1,15 @@
+[init]
+	defaultBranch = main
+[user]
+  name = {{ .git.name }}
+  email = {{ .git.email }}
+[core]
+	editor = nvim 
+[color]
+	ui = auto
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
