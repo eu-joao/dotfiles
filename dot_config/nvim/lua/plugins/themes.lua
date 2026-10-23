@@ -42,7 +42,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "gruvbox", -- gruvbox, catppuccin, rose-pine, tokyonight
+      colorscheme = "catppuccin", -- gruvbox, catppuccin, rose-pine, tokyonight
     },
   },
 }
