@@ -2,7 +2,8 @@
 
 ! ===== Cores principais =====
 #define C_FG       #cdd6f4
-#define C_BG       #1e1e2e
+! Fundo crust (#11111b), mais escuro que o base (#1e1e2e), igual ao herdr e ao tema do tmux
+#define C_BG       #11111b
 #define C_CURSOR   #f5e0dc
 #define C_POINTER  #f5e0dc
 #define C_HL_BG    #585b70
