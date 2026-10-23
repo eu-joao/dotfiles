@@ -1,0 +1,53 @@
+# Herdr Theme - Catppuccin Mocha Palette (Dark Mode)
+# Base colors from Catppuccin Mocha (https://github.com/catppuccin/catppuccin)
+# Used by herdr.dev in "ink" mode
+
+# --- Base Colors ---
+set -g @herdr-rosewater "#f5e0dc"
+set -g @herdr-flamingo "#f2cdcd"
+set -g @herdr-pink "#f5c2e7"
+set -g @herdr-mauve "#cba6f7"
+set -g @herdr-red "#f38ba8"
+set -g @herdr-maroon "#eba0ac"
+set -g @herdr-peach "#fab387"
+set -g @herdr-yellow "#f9e2af"
+set -g @herdr-green "#a6e3a1"
+set -g @herdr-teal "#94e2d5"
+set -g @herdr-sky "#89d185"
+set -g @herdr-sapphire "#89b4fa"
+set -g @herdr-blue "#89b4fa"
+set -g @herdr-lavender "#f5c2e7"
+
+# --- Surface Colors ---
+set -g @herdr-text "#cdd6f4"
+set -g @herdr-subtext1 "#bac2de"
+set -g @herdr-subtext0 "#a6adc8"
+set -g @herdr-overlay2 "#9399b2"
+set -g @herdr-overlay1 "#7f849c"
+set -g @herdr-overlay0 "#6c7086"
+set -g @herdr-surface2 "#585b70"
+set -g @herdr-surface1 "#45475a"
+set -g @herdr-surface0 "#313244"
+
+# --- Background Colors ---
+set -g @herdr-base "#1e1e2e"
+set -g @herdr-mantle "#181825"
+set -g @herdr-crust "#11111b"
+
+# --- Tmux-Specific Colors ---
+set -g @herdr-bg "#{@herdr-base}"          # Background
+set -g @herdr-fg "#{@herdr-text}"          # Foreground
+set -g @herdr-accent "#{@herdr-blue}"      # Primary accent (Herdr uses blue/sapphire)
+set -g @herdr-accent2 "#{@herdr-green}"     # Secondary accent
+set -g @herdr-status-bg "#{@herdr-surface0}" # Status bar background
+set -g @herdr-status-fg "#{@herdr-subtext1}" # Status bar foreground
+set -g @herdr-window-current "#{@herdr-blue}" # Active window highlight
+set -g @herdr-window-inactive "#{@herdr-surface2}" # Inactive windows
+set -g @herdr-pane-border "#{@herdr-surface1}" # Pane borders
+set -g @herdr-pane-active "#{@herdr-accent}" # Active pane border
+
+# --- Status Bar Specific ---
+set -g @herdr-prefix-fg "#{@herdr-red}"      # Prefix key color
+set -g @herdr-time-fg "#{@herdr-yellow}"     # Time color
+set -g @herdr-date-fg "#{@herdr-subtext1}"   # Date color
+set -g @herdr-host-fg "#{@herdr-green}"      # Hostname color
