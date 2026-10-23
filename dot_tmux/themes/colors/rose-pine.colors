@@ -1,0 +1,32 @@
+# ┌────────────────────────────────────────────────────────────────────────────┐
+# │ rose-pine.colors                                                           │
+# └────────────────────────────────────────────────────────────────────────────┘
+# Tema de cores Rosé Pine para o herdr.conf. Mesmos nomes em todos os temas.
+# Só valores fixos (hex): o tmux não expande uma variável dentro de outra.
+# Troca de tema: ver "Tema" no dot_tmux.conf.
+# O crust precisa ser igual ao fundo do terminal (C_BG do tema rose-pine no Xresources).
+
+# ┌────────────────────────────────────────────────────────────────────────────┐
+# │ Cores do Rosé Pine                                                         │
+# └────────────────────────────────────────────────────────────────────────────┘
+
+# ── Fundos (do mais escuro ao mais claro) ─────────────────────────────────────
+set -g @herdr-crust     "#191724"   # fundo dos painéis e da área principal (igual ao C_BG do terminal)
+set -g @herdr-mantle    "#1c1a29"   # tom intermediário (reserva)
+set -g @herdr-base      "#1f1d2e"   # fundo da barra de abas
+
+# ── Superfícies e textos ──────────────────────────────────────────────────────
+set -g @herdr-surface0  "#26233a"   # caixas de mensagem e traços entre as abas
+set -g @herdr-surface1  "#403d52"   # borda dos painéis
+set -g @herdr-surface2  "#524f67"   # separadores discretos
+set -g @herdr-overlay0  "#6e6a86"   # texto apagado (título de painel inativo)
+set -g @herdr-overlay1  "#7e7a96"   # texto de aba inativa
+set -g @herdr-subtext0  "#908caa"   # texto secundário e busca no modo de cópia
+set -g @herdr-text      "#e0def4"   # texto principal
+
+# ── Cores de destaque ─────────────────────────────────────────────────────────
+set -g @herdr-mauve     "#c4a7e7"   # destaque (aba ativa e nome do painel em foco)
+set -g @herdr-yellow    "#f6c177"   # aviso e resultado atual da busca
+set -g @herdr-red       "#eb6f92"   # prefixo pressionado e sino
+set -g @herdr-green     "#31748f"   # cor de apoio (reserva)
+set -g @herdr-teal      "#9ccfd8"   # cor de apoio (reserva)

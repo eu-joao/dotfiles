@@ -1,30 +1,32 @@
 # ┌────────────────────────────────────────────────────────────────────────────┐
-# │ herdr.colors                                                               │
+# │ catppuccin-mocha.colors                                                    │
 # └────────────────────────────────────────────────────────────────────────────┘
-# Só valores fixos (hex). O tmux não expande uma variável dentro de outra
-# com "set -g", por isso nada aqui aponta para outra cor.
+# Tema de cores Catppuccin Mocha para o herdr.conf. Mesmos nomes em todos os temas.
+# Só valores fixos (hex): o tmux não expande uma variável dentro de outra.
+# Troca de tema: ver "Tema" no dot_tmux.conf.
+# O crust precisa ser igual ao fundo do terminal (mesmo fundo do C_BG do tema catppuccin-mocha do Xresources (crust)).
 
 # ┌────────────────────────────────────────────────────────────────────────────┐
 # │ Cores do Catppuccin Mocha                                                  │
 # └────────────────────────────────────────────────────────────────────────────┘
 
 # ── Fundos (do mais escuro ao mais claro) ─────────────────────────────────────
-set -g @herdr-crust    "#11111b"   # fundo dos painéis (área principal do herdr)
-set -g @herdr-mantle   "#181825"   # fundo da barra lateral do herdr
-set -g @herdr-base     "#1e1e2e"   # fundo da barra de abas e item selecionado
+set -g @herdr-crust     "#11111b"   # fundo dos painéis e da área principal (igual ao C_BG do terminal)
+set -g @herdr-mantle    "#181825"   # tom intermediário (reserva)
+set -g @herdr-base      "#1e1e2e"   # fundo da barra de abas
 
 # ── Superfícies e textos ──────────────────────────────────────────────────────
-set -g @herdr-surface0 "#313244"   # caixas de mensagem
-set -g @herdr-surface1 "#45475a"   # borda de painel inativo
-set -g @herdr-surface2 "#585b70"   # separadores discretos
-set -g @herdr-overlay0 "#6c7086"   # texto apagado (título de painel inativo)
-set -g @herdr-overlay1 "#7f849c"   # texto de aba inativa
-set -g @herdr-subtext0 "#a6adc8"   # texto secundário
-set -g @herdr-text     "#cdd6f4"   # texto principal
+set -g @herdr-surface0  "#313244"   # caixas de mensagem e traços entre as abas
+set -g @herdr-surface1  "#45475a"   # borda dos painéis
+set -g @herdr-surface2  "#585b70"   # separadores discretos
+set -g @herdr-overlay0  "#6c7086"   # texto apagado (título de painel inativo)
+set -g @herdr-overlay1  "#7f849c"   # texto de aba inativa
+set -g @herdr-subtext0  "#a6adc8"   # texto secundário e busca no modo de cópia
+set -g @herdr-text      "#cdd6f4"   # texto principal
 
 # ── Cores de destaque ─────────────────────────────────────────────────────────
-set -g @herdr-mauve    "#cba6f7"   # destaque principal do herdr (aba e borda ativas)
-set -g @herdr-yellow   "#f9e2af"   # "working" no herdr
-set -g @herdr-red      "#f38ba8"   # "blocked" no herdr (aqui: prefixo pressionado)
-set -g @herdr-green    "#a6e3a1"   # "done" no herdr
-set -g @herdr-teal     "#94e2d5"   # destaque secundário
+set -g @herdr-mauve     "#cba6f7"   # destaque (aba ativa e nome do painel em foco)
+set -g @herdr-yellow    "#f9e2af"   # aviso e resultado atual da busca
+set -g @herdr-red       "#f38ba8"   # prefixo pressionado e sino
+set -g @herdr-green     "#a6e3a1"   # cor de apoio (reserva)
+set -g @herdr-teal      "#94e2d5"   # cor de apoio (reserva)
