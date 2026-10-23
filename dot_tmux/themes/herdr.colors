@@ -1,53 +1,30 @@
-# Herdr Theme - Catppuccin Mocha Palette (Dark Mode)
-# Base colors from Catppuccin Mocha (https://github.com/catppuccin/catppuccin)
-# Used by herdr.dev in "ink" mode
+# ┌────────────────────────────────────────────────────────────────────────────┐
+# │ herdr.colors                                                               │
+# └────────────────────────────────────────────────────────────────────────────┘
+# Só valores fixos (hex). O tmux não expande uma variável dentro de outra
+# com "set -g", por isso nada aqui aponta para outra cor.
 
-# --- Base Colors ---
-set -g @herdr-rosewater "#f5e0dc"
-set -g @herdr-flamingo "#f2cdcd"
-set -g @herdr-pink "#f5c2e7"
-set -g @herdr-mauve "#cba6f7"
-set -g @herdr-red "#f38ba8"
-set -g @herdr-maroon "#eba0ac"
-set -g @herdr-peach "#fab387"
-set -g @herdr-yellow "#f9e2af"
-set -g @herdr-green "#a6e3a1"
-set -g @herdr-teal "#94e2d5"
-set -g @herdr-sky "#89d185"
-set -g @herdr-sapphire "#89b4fa"
-set -g @herdr-blue "#89b4fa"
-set -g @herdr-lavender "#f5c2e7"
+# ┌────────────────────────────────────────────────────────────────────────────┐
+# │ Cores do Catppuccin Mocha                                                  │
+# └────────────────────────────────────────────────────────────────────────────┘
 
-# --- Surface Colors ---
-set -g @herdr-text "#cdd6f4"
-set -g @herdr-subtext1 "#bac2de"
-set -g @herdr-subtext0 "#a6adc8"
-set -g @herdr-overlay2 "#9399b2"
-set -g @herdr-overlay1 "#7f849c"
-set -g @herdr-overlay0 "#6c7086"
-set -g @herdr-surface2 "#585b70"
-set -g @herdr-surface1 "#45475a"
-set -g @herdr-surface0 "#313244"
+# ── Fundos (do mais escuro ao mais claro) ─────────────────────────────────────
+set -g @herdr-crust    "#11111b"   # fundo dos painéis (área principal do herdr)
+set -g @herdr-mantle   "#181825"   # fundo da barra lateral do herdr
+set -g @herdr-base     "#1e1e2e"   # fundo da barra de abas e item selecionado
 
-# --- Background Colors ---
-set -g @herdr-base "#1e1e2e"
-set -g @herdr-mantle "#181825"
-set -g @herdr-crust "#11111b"
+# ── Superfícies e textos ──────────────────────────────────────────────────────
+set -g @herdr-surface0 "#313244"   # caixas de mensagem
+set -g @herdr-surface1 "#45475a"   # borda de painel inativo
+set -g @herdr-surface2 "#585b70"   # separadores discretos
+set -g @herdr-overlay0 "#6c7086"   # texto apagado (título de painel inativo)
+set -g @herdr-overlay1 "#7f849c"   # texto de aba inativa
+set -g @herdr-subtext0 "#a6adc8"   # texto secundário
+set -g @herdr-text     "#cdd6f4"   # texto principal
 
-# --- Tmux-Specific Colors ---
-set -g @herdr-bg "#{@herdr-base}"          # Background
-set -g @herdr-fg "#{@herdr-text}"          # Foreground
-set -g @herdr-accent "#{@herdr-blue}"      # Primary accent (Herdr uses blue/sapphire)
-set -g @herdr-accent2 "#{@herdr-green}"     # Secondary accent
-set -g @herdr-status-bg "#{@herdr-surface0}" # Status bar background
-set -g @herdr-status-fg "#{@herdr-subtext1}" # Status bar foreground
-set -g @herdr-window-current "#{@herdr-blue}" # Active window highlight
-set -g @herdr-window-inactive "#{@herdr-surface2}" # Inactive windows
-set -g @herdr-pane-border "#{@herdr-surface1}" # Pane borders
-set -g @herdr-pane-active "#{@herdr-accent}" # Active pane border
-
-# --- Status Bar Specific ---
-set -g @herdr-prefix-fg "#{@herdr-red}"      # Prefix key color
-set -g @herdr-time-fg "#{@herdr-yellow}"     # Time color
-set -g @herdr-date-fg "#{@herdr-subtext1}"   # Date color
-set -g @herdr-host-fg "#{@herdr-green}"      # Hostname color
+# ── Cores de destaque ─────────────────────────────────────────────────────────
+set -g @herdr-mauve    "#cba6f7"   # destaque principal do herdr (aba e borda ativas)
+set -g @herdr-yellow   "#f9e2af"   # "working" no herdr
+set -g @herdr-red      "#f38ba8"   # "blocked" no herdr (aqui: prefixo pressionado)
+set -g @herdr-green    "#a6e3a1"   # "done" no herdr
+set -g @herdr-teal     "#94e2d5"   # destaque secundário
