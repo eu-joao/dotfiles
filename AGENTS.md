@@ -43,5 +43,6 @@ Este repositório gerencia arquivos de configuração pessoais (*dotfiles*) com 
 - Não faça commit, push, merge ou criação de PR sem solicitação explícita.
 - Não presuma que a branch de trabalho seja `main`.
 - Quando um commit for solicitado, use uma mensagem clara e, se não houver convenção diferente no histórico, siga Conventional Commits.
+- **Todo commit que incluir contribuição de uma IA deve incluir um trailer `Co-authored-by` identificando essa IA.** Use o nome e o endereço de e-mail de coautoria oficial/documentado pelo provedor ou pela ferramenta de IA; nunca invente uma identidade ou endereço. Se não houver uma identidade verificável disponível, peça ao usuário os dados corretos antes de criar o commit.
 - Explique brevemente o que mudou, quais validações foram executadas e quaisquer limitações relevantes.
 - Seja conciso e responda em português, salvo se o usuário solicitar outro idioma.
