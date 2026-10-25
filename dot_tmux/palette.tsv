@@ -1,0 +1,38 @@
+# rótulo	atalho	comando
+# {path} vira o diretório do painel atual
+
+# ── Sessão ────────────────────────────────────────────────────────────────────
+Desconectar (detach)	prefix+d	detach-client
+Escolher árvore	prefix+s	choose-tree -Zw
+Renomear sessão	prefix+$	command-prompt -I "#S" "rename-session -- '%%'"
+
+# ── Janelas ───────────────────────────────────────────────────────────────────
+Nova janela	prefix+c	new-window -c {path}
+Próxima janela	prefix+n	next-window
+Janela anterior	prefix+p	previous-window
+Última janela	prefix+l	last-window
+Renomear janela	prefix+,	command-prompt -I "#W" "rename-window -- '%%'"
+Matar janela	prefix+&	confirm-before -p "Matar janela #W? (y/n)" kill-window
+Listar janelas	prefix+w	choose-tree -Zw
+
+# ── Painéis ───────────────────────────────────────────────────────────────────
+Dividir na vertical	prefix+%	split-window -h -c {path}
+Dividir na horizontal	prefix+"	split-window -v -c {path}
+Zoom do painel	prefix+z	resize-pane -Z
+Painel à esquerda	prefix+←	select-pane -L
+Painel abaixo	prefix+↓	select-pane -D
+Painel acima	prefix+↑	select-pane -U
+Painel à direita	prefix+→	select-pane -R
+Mostrar números dos painéis	prefix+q	display-panes
+Matar painel	prefix+x	confirm-before -p "Matar painel? (y/n)" kill-pane
+Quebrar painel em janela	prefix+!	break-pane
+
+# ── Modos e config ────────────────────────────────────────────────────────────
+Modo de cópia	prefix+[	copy-mode
+Relógio	prefix+t	clock-mode
+Linha de comando	prefix+:	command-prompt
+Recarregar configuração	prefix+r	source-file ~/.tmux.conf \; display-message "Reloaded!"
+
+# ── TPM ───────────────────────────────────────────────────────────────────────
+TPM: instalar plugins	prefix+I	run-shell ~/.tmux/plugins/tpm/bindings/install_plugins
+TPM: atualizar plugins	prefix+U	run-shell ~/.tmux/plugins/tpm/bindings/update_plugins
