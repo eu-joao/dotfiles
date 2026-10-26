@@ -87,3 +87,23 @@ prompt pure
 # Ctrl+R → histórico | Ctrl+T → arquivos
 # Instalação: https://github.com/junegunn/fzf#installation
 source <(fzf --zsh)
+
+# ┌────────────────────────────────────────────────────────────────────────────┐
+# │ tmux (início automático apenas no uxterm)                                  │
+# └────────────────────────────────────────────────────────────────────────────┘
+# Só inicia o tmux se TODAS as condições forem verdadeiras:
+#   1. shell interativo         → ignora scripts e `zsh -c`
+#   2. fora do tmux             → evita loop (tmux dentro de tmux)
+#   3. rodando no xterm/uxterm  → $XTERM_VERSION só existe nele, então
+#                                 VS Code, TTY e outros terminais ficam de fora
+#   4. fora de sessão SSH       → não interfere em acessos remotos
+#   5. tmux instalado           → sem erro se ele não existir
+if [[ -o interactive ]] \
+   && [[ -z $TMUX ]] \
+   && [[ -n $XTERM_VERSION ]] \
+   && [[ -z $SSH_CONNECTION ]] \
+   && (( $+commands[tmux] )); then
+  # Sem `exec`: se o tmux falhar ao abrir, você continua num zsh normal.
+  # Se ele fechar normalmente (exit ou detach), o terminal fecha junto.
+  tmux new-session -A -s main && exit
+fi
