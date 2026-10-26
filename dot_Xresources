@@ -1,7 +1,7 @@
 ! aplicar configuraão: xrdb -merge ~/.Xresources
 
-#include "/home/abacate/.Xresources.d/catppuccin-mocha"
-#include "/home/abacate/.Xresources.d/template"
+#include "${HOME}/.Xresources.d/catppuccin-mocha"
+#include "${HOME}/.Xresources.d/template"
 
 ! ── Janela ──
 UXTerm*maximized: true
