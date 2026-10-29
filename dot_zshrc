@@ -8,6 +8,7 @@
 export LANG=pt_BR.UTF-8
 export LC_ALL=pt_BR.UTF-8
 export EDITOR=nvim
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"   # man colorido via bat
 
 # ┌────────────────────────────────────────────────────────────────────────────┐
 # │ PATH + Homebrew                                                            │
@@ -16,21 +17,38 @@ export PATH="$HOME/.local/bin:$PATH"
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv zsh)"
 
 # ┌────────────────────────────────────────────────────────────────────────────┐
-# │ Oh My Zsh                                                                  │
+# │ tmux (início automático apenas no uxterm)                                  │
 # └────────────────────────────────────────────────────────────────────────────┘
-# export ZSH="$HOME/.oh-my-zsh"
+# Fica logo depois do Homebrew (que traz o tmux no PATH) e antes de todo o
+# resto: o shell externo só abre o tmux, sem carregar prompt nem plugins.
+# Só inicia o tmux se TODAS as condições forem verdadeiras:
+#   1. shell interativo         → ignora scripts e `zsh -c`
+#   2. fora do tmux             → evita loop (tmux dentro de tmux)
+#   3. rodando no xterm/uxterm  → $XTERM_VERSION só existe nele, então
+#                                 VS Code, TTY e outros terminais ficam de fora
+#   4. fora de sessão SSH       → não interfere em acessos remotos
+#   5. tmux instalado           → sem erro se ele não existir
+if [[ -o interactive ]] \
+   && [[ -z $TMUX ]] \
+   && [[ -n $XTERM_VERSION ]] \
+   && [[ -z $SSH_CONNECTION ]] \
+   && (( $+commands[tmux] )); then
+  # Sem `exec`: se o tmux falhar ao abrir, você continua num zsh normal.
+  # Se ele fechar normalmente (exit ou detach), o terminal fecha junto.
+  tmux new-session -A -s main && exit
+fi
 
-# plugins=(
-#   alias-finder               # avisa quando você digita um comando que já tem alias
-#   chezmoi                    # completions + aliases do chezmoi (só útil se você usa chezmoi)
-#   colored-man-pages          # deixa as páginas do `man` coloridas
-#   command-not-found          # sugere qual pacote instalar quando o comando não existe
-#   gh                         # autocompletar do GitHub CLI (`gh`)
-#   zsh-autosuggestions        # sugere comandos do histórico em cinza (→ aceita)
-#   zsh-syntax-highlighting    # colore o comando enquanto digita; deve ser o ÚLTIMO da lista
-# )
+# ┌────────────────────────────────────────────────────────────────────────────┐
+# │ Completions (sem Oh My Zsh)                                                │
+# └────────────────────────────────────────────────────────────────────────────┘
+# O site-functions do brew traz o prompt pure e as completions de gh e chezmoi.
+fpath+=("$HOMEBREW_PREFIX/share/zsh/site-functions")
 
-# source $ZSH/oh-my-zsh.sh
+# compinit com cache: só recompila se o .zcompdump tiver mais de 20h
+autoload -Uz compinit
+_zcd=(~/.zcompdump(Nmh-20))
+if (( $#_zcd )); then compinit -C; else compinit; fi
+unset _zcd
 
 # ┌────────────────────────────────────────────────────────────────────────────┐
 # │ Histórico                                                                  │
@@ -73,7 +91,6 @@ alias gl="git log"
 # ┌────────────────────────────────────────────────────────────────────────────┐
 # │ Pure (prompt)                                                              │
 # └────────────────────────────────────────────────────────────────────────────┘
-fpath+=("$(brew --prefix)/share/zsh/site-functions") # se instalar pelo homebrew, adiciona o path do pure
 autoload -U promptinit; promptinit
 prompt pure
 
@@ -82,24 +99,11 @@ prompt pure
 # └────────────────────────────────────────────────────────────────────────────┘
 # Ctrl+R → histórico | Ctrl+T → arquivos
 # Instalação: https://github.com/junegunn/fzf#installation
-source /home/linuxbrew/.linuxbrew/opt/fzf/shell/completion.zsh 2>/dev/null || source <(fzf --zsh)
+source "$HOMEBREW_PREFIX/opt/fzf/shell/completion.zsh" 2>/dev/null || source <(fzf --zsh)
 
 # ┌────────────────────────────────────────────────────────────────────────────┐
-# │ tmux (início automático apenas no uxterm)                                  │
+# │ Plugins (brew install zsh-autosuggestions zsh-syntax-highlighting)         │
 # └────────────────────────────────────────────────────────────────────────────┘
-# Só inicia o tmux se TODAS as condições forem verdadeiras:
-#   1. shell interativo         → ignora scripts e `zsh -c`
-#   2. fora do tmux             → evita loop (tmux dentro de tmux)
-#   3. rodando no xterm/uxterm  → $XTERM_VERSION só existe nele, então
-#                                 VS Code, TTY e outros terminais ficam de fora
-#   4. fora de sessão SSH       → não interfere em acessos remotos
-#   5. tmux instalado           → sem erro se ele não existir
-if [[ -o interactive ]] \
-   && [[ -z $TMUX ]] \
-   && [[ -n $XTERM_VERSION ]] \
-   && [[ -z $SSH_CONNECTION ]] \
-   && (( $+commands[tmux] )); then
-  # Sem `exec`: se o tmux falhar ao abrir, você continua num zsh normal.
-  # Se ele fechar normalmente (exit ou detach), o terminal fecha junto.
-  tmux new-session -A -s main && exit
-fi
+# Ficam no fim, depois de todos os widgets. O syntax-highlighting vem por último.
+source "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh"       # sugere comandos do histórico em cinza (→ aceita)
+source "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"   # colore o comando enquanto digita
