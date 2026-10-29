@@ -39,16 +39,20 @@ if [[ -o interactive ]] \
 fi
 
 # ┌────────────────────────────────────────────────────────────────────────────┐
-# │ Completions (sem Oh My Zsh)                                                │
+# │ Oh My Zsh                                                                  │
 # └────────────────────────────────────────────────────────────────────────────┘
-# O site-functions do brew traz o prompt pure e as completions de gh e chezmoi.
+# O site-functions do brew (pure e completions de gh e chezmoi) entra no fpath
+# antes do OMZ, que roda o compinit. autosuggestions e syntax-highlighting vêm
+# do brew (seção Plugins), por isso a lista de plugins do OMZ fica vazia.
 fpath+=("$HOMEBREW_PREFIX/share/zsh/site-functions")
 
-# compinit com cache: só recompila se o .zcompdump tiver mais de 20h
-autoload -Uz compinit
-_zcd=(~/.zcompdump(Nmh-20))
-if (( $#_zcd )); then compinit -C; else compinit; fi
-unset _zcd
+export ZSH="$HOME/.oh-my-zsh"
+ZSH_THEME=""                           # o prompt é o pure
+zstyle ':omz:update' mode disabled     # sem checagem de atualização ao abrir o shell
+ZSH_DISABLE_COMPFIX=true               # pula o compaudit (auditoria de segurança do compinit)
+plugins=()
+
+source $ZSH/oh-my-zsh.sh
 
 # ┌────────────────────────────────────────────────────────────────────────────┐
 # │ Histórico                                                                  │
