@@ -2,8 +2,6 @@ README.md
 fastfetch.png
 AGENTS.md
 .git/
-.gitignore
-**/tmux/plugins/
 
 .agents/
 .cursor/
