@@ -1,7 +1,7 @@
 ! aplicar configuraão: xrdb -merge ~/.Xresources
 
-#include "${HOME}/.Xresources.d/catppuccin-mocha"
-#include "${HOME}/.Xresources.d/template"
+#include ".Xresources.d/catppuccin-mocha"
+#include ".Xresources.d/template"
 
 ! ── Janela ──
 UXTerm*maximized: true
@@ -40,6 +40,11 @@ UXTerm*dynamicColors: true
 
 ! ── Interação com fastfetch  ──
 UXTerm*allowWindowOps: true
+
+! ── Tecla alt no emacs ──
+XTerm*metaSendsEscape: true
+XTerm*eightBitInput: false
+UXTerm*termName: xterm-256color
 
 ! ── Atalhos (iguais aos do wezterm) ──
 UXTerm*VT100.translations: #override \n\
