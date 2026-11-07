@@ -1,0 +1,3 @@
+# Ignorar arquivos de spec em markdown
+*spec*.md
+tmux-config.md
