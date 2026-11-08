@@ -1,0 +1,35 @@
+! Tema: Dracula
+
+! ===== Cores principais =====
+#define C_FG       #f8f8f2
+#define C_BG       #282a36
+#define C_CURSOR   #f8f8f2
+#define C_POINTER  #f8f8f2
+#define C_HL_BG    #44475a
+#define C_HL_FG    #f8f8f2
+
+! ===== Cores normais (color0-7) =====
+#define C_00       #21222c
+#define C_01       #ff5555
+#define C_02       #50fa7b
+#define C_03       #f1fa8c
+#define C_04       #bd93f9
+#define C_05       #ff79c6
+#define C_06       #8be9fd
+#define C_07       #f8f8f2
+
+! ===== Cores brilhantes (color8-15) =====
+#define C_08       #6272a4
+#define C_09       #ff6e6e
+#define C_10       #69ff94
+#define C_11       #ffffa5
+#define C_12       #d6acff
+#define C_13       #ff92df
+#define C_14       #a4ffff
+#define C_15       #ffffff
+
+! ===== Cores diversas =====
+#define C_BOLD     #ffffff
+#define C_UL       #8be9fd
+#define C_IT       #bd93f9
+#define C_BL       #ff5555

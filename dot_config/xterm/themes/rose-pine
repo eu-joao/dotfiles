@@ -1,0 +1,35 @@
+! Tema: Rosé Pine
+
+! ===== Cores principais =====
+#define C_FG       #e0def4
+#define C_BG       #191724
+#define C_CURSOR   #e0def4
+#define C_POINTER  #e0def4
+#define C_HL_BG    #403d52
+#define C_HL_FG    #e0def4
+
+! ===== Cores normais (color0-7) =====
+#define C_00       #26233a
+#define C_01       #eb6f92
+#define C_02       #31748f
+#define C_03       #f6c177
+#define C_04       #9ccfd8
+#define C_05       #c4a7e7
+#define C_06       #ebbcba
+#define C_07       #e0def4
+
+! ===== Cores brilhantes (color8-15) =====
+#define C_08       #6e6a86
+#define C_09       #eb6f92
+#define C_10       #31748f
+#define C_11       #f6c177
+#define C_12       #9ccfd8
+#define C_13       #c4a7e7
+#define C_14       #ebbcba
+#define C_15       #e0def4
+
+! ===== Cores diversas =====
+#define C_BOLD     #e0def4
+#define C_UL       #9ccfd8
+#define C_IT       #c4a7e7
+#define C_BL       #eb6f92

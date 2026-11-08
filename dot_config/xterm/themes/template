@@ -1,0 +1,32 @@
+UXTerm*foreground:         C_FG
+UXTerm*background:         C_BG
+UXTerm*cursorColor:        C_CURSOR
+UXTerm*pointerColor:       C_POINTER
+UXTerm*highlightColor:     C_HL_BG
+UXTerm*highlightTextColor: C_HL_FG
+
+UXTerm*color0:  C_00
+UXTerm*color1:  C_01
+UXTerm*color2:  C_02
+UXTerm*color3:  C_03
+UXTerm*color4:  C_04
+UXTerm*color5:  C_05
+UXTerm*color6:  C_06
+UXTerm*color7:  C_07
+UXTerm*color8:  C_08
+UXTerm*color9:  C_09
+UXTerm*color10: C_10
+UXTerm*color11: C_11
+UXTerm*color12: C_12
+UXTerm*color13: C_13
+UXTerm*color14: C_14
+UXTerm*color15: C_15
+
+UXTerm*colorBDMode: true
+UXTerm*colorBD:     C_BOLD
+UXTerm*colorULMode: true
+UXTerm*colorUL:     C_UL
+UXTerm*colorITMode: true
+UXTerm*colorIT:     C_IT
+UXTerm*colorBLMode: true
+UXTerm*colorBL:     C_BL

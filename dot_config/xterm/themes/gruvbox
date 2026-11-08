@@ -1,0 +1,35 @@
+! Tema: Gruvbox
+
+! ===== Cores principais =====
+#define C_FG        #ebdbb2
+#define C_BG        #282828
+#define C_CURSOR    #ebdbb2
+#define C_POINTER   #ebdbb2
+#define C_HL_BG     #928374
+#define C_HL_FG     #ebdbb2
+
+! ===== Cores normais (color0-7) =====
+#define C_00 #282828
+#define C_01 #cc241d
+#define C_02 #98971a
+#define C_03 #d79921
+#define C_04 #458588
+#define C_05 #b16286
+#define C_06 #689d6a
+#define C_07 #a89984
+
+! ===== Cores brilhantes (color8-15) =====
+#define C_08 #928374
+#define C_09 #fb4934
+#define C_10 #b8bb26
+#define C_11 #fabd2f
+#define C_12 #83a598
+#define C_13 #d3869b
+#define C_14 #8ec07c
+#define C_15 #ebdbb2
+
+! ===== Cores diversas =====
+#define C_BOLD      #fabd2f
+#define C_UL        #8ec07c
+#define C_IT        #d3869b
+#define C_BL        #fb4934
