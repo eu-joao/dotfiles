@@ -1,7 +1,9 @@
 README.md
 fastfetch.png
 AGENTS.md
-**/.git/
+.git/
+.gitignore
+.zcompdump*
 .config/tmux/plugins/
 
 .agents/
