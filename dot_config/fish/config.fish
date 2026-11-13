@@ -8,8 +8,8 @@
 set -gx LANG pt_BR.UTF-8
 set -gx LC_ALL pt_BR.UTF-8
 set -gx EDITOR nvim
-set -gx MANPAGER "sh -c 'col -bx | bat -l man -p'"   # man colorido via bat
-set -g fish_greeting                                   # sem mensagem de boas-vindas ao abrir o shell
+set -gx MANPAGER "sh -c 'col -bx | bat -l man -p'" # man colorido via bat
+set -g fish_greeting # sem mensagem de boas-vindas ao abrir o shell
 
 # ┌────────────────────────────────────────────────────────────────────────────┐
 # │ PATH + Homebrew                                                            │
@@ -43,12 +43,13 @@ if status is-interactive
     # ── Navegação ─────────────────────────────────────────────────────────────
     abbr -a .. "cd .."
     abbr -a ~ "cd ~"
+    abbr -a e exit
 
     # ── Listagem (eza é o fork mantido do exa) ────────────────────────────────
-    alias l="eza --classify --color=always --all --sort=type --icons"
-    alias ls="eza --classify --color=always --all --sort=type --icons"
-    alias lt="eza --classify --color=always --all --sort=type --tree --level=2 --icons"
-    alias lg="eza --classify --color=always --all --sort=type --long --header --links --no-user --icons"
+    alias l="eza --classify --color=always --all --sort=type --icons=always"
+    alias ls="eza --classify --color=always --all --sort=type --icons=always"
+    alias lt="eza --classify --color=always --all --sort=type --tree --level=2 --icons=always"
+    alias lg="eza --classify --color=always --all --sort=type --long --header --links --no-user --icons=always"
 
     # ── Editor ────────────────────────────────────────────────────────────────
     alias vi=nvim
